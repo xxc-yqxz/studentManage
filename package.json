@@ -1,0 +1,15 @@
+{
+  "name": "student_management",
+  "version": "1.0.0",
+  "description": "1.项目的请求路径为localhost",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
