@@ -98,9 +98,9 @@ ejrpoangeanfaoiOIHJKJKHjopnaonhefoqpwjfl...
 | --------- | ------ | ------------------------------ |
 | status    | int    | 请求是否失败，0：成功，1：失败 |
 | message   | string | 请求结果的描述信息             |
-| id        | int    | 用户的id                       |
-| username  | string | 用户的姓名                     |
-| roles     | string | 用户的角色(老师、学生、管理员) |
+| +id       | int    | 用户的id                       |
+| +username | string | 用户的姓名                     |
+| +roles    | string | 用户的角色(老师、学生、管理员) |
 | +stuId    | string | 学生的学号                     |
 | +birthday | string | 学生的出生日期                 |
 | +sex      | string | 学生的性别                     |
