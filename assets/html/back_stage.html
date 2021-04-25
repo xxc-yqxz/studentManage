@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>学生管理系统</title>
+    <link rel="stylesheet" href="../lib/css/layui.css">
+    <link rel="stylesheet" href="../css/back_stage.css">
+</head>
+
+<body>
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo">
+                <a href="./back_stage/index.html" target="fm" class="layui-logo">学生管理系统</a>
+            </div>
+            <!-- 头部区域（可配合layui 已有的水平导航） -->
+            <ul class="layui-nav layui-layout-right">
+                <li class="username">你好，薛昕铖</li>
+
+                <li class="layui-nav-item"><a href="">退出</a></li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <li class="layui-nav-item"><a href="../html/back_stage/score.html" target="fm">成绩查询</a></li>
+                    <li class="layui-nav-item"><a href="../html/back_stage/status.html" target="fm">学籍查询</a></li>
+                    <li class="layui-nav-item"><a href="../html/back_stage/modifypwd.html" target="fm">修改密码</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body">
+            <iframe src="./back_stage/index.html" name="fm" frameborder="0"></iframe>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            欢迎来到学生管理系统，有问题请@管理员admin
+        </div>
+    </div>
+
+    <script src="../../assets/lib/layui.js"></script>
+</body>
+
+</html>

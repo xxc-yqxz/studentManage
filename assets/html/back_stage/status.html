@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../lib/css/layui.css">
+    <link rel="stylesheet" href="../../css/back_stage/status.css">
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">学籍查询</div>
+        <div class="layui-card-body">
+            <form class="layui-form" action="" id="form">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">学号:</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="title" required lay-verify="required" placeholder="请输入标题"
+                            autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">姓名:</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="name" required lay-verify="required" placeholder="请输入姓名"
+                            autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">出生年月:</label>
+                    <div class="layui-input-inline">
+                        <input type="date" name="date" required lay-verify="required" placeholder="请选择出生日期"
+                            autocomplete="off" class="layui-input date">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">籍贯:</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="jiguan" required lay-verify="required" placeholder="请输入籍贯"
+                            autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">性别:</label>
+                    <div class="layui-input-block">
+                        <input type="radio" name="sex" value="男" title="男">
+                        <input type="radio" name="sex" value="女" title="女" checked>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">专业:</label>
+
+                    <div class="layui-input-inline ">
+                        <select name="city" lay-verify="">
+                            <option value="">请选择一个专业：</option>
+                            <option value="">软件工程</option>
+                            <option value="">物联网</option>
+                            <option value="">网络工程</option>
+                            <option value="">大数据</option>
+                            <option value="">计算机科学与技术</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">班级:</label>
+                    <div class="layui-input-inline">
+                        <select name="city" lay-verify="">
+                            <option value="">请选择班级：</option>
+                            <option value="010">1班</option>
+                            <option value="021">2班</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item layui-form-text status">
+                    <label class="layui-form-label">籍贯:</label>
+                    <div class="layui-input-inline">
+                        <div class="layui-col-md4">
+                            <div class="layui-col-md2">
+                                省：
+                            </div>
+                            <div class="layui-col-md9">
+                                <select name="" id="sheng" class="layui-layui-input-inline" lay-filter="selectfilter1">
+                                    <option value="">请选择</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md4">
+                            <div class="layui-col-md2">
+                                市：
+                            </div>
+                            <div class="layui-col-md9">
+                                <select name="" id="shi" lay-filter="selectfilter2">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="layui-col-md4">
+                            <div class="layui-col-md3">
+                                区/县：
+                            </div>
+                            <div class="layui-col-md9">
+                                <select name="" id="qu" lay-filter="selectfilter3">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">提交修改</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../../lib/layui.js"></script>
+    <script src="../../lib/jquery.js"></script>
+    <script src="../../js/status.js"></script>
+</body>
+
+</html>
