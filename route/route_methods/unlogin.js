@@ -12,7 +12,7 @@ exports.login = (req, res) => {
             return res.cc(err);
         }
         if (results.length !== 1) {
-            return res.cc("用户名为空，请重新输入")
+            return res.cc("用户名错误，请重新输入")
         }
 
         if (results[0].password !== userInfo.password) {
@@ -23,7 +23,7 @@ exports.login = (req, res) => {
         res.send({
             status: 0,
             message: "登录成功",
-            token: "Bearer" + tokenStr
+            token: "Bearer " + tokenStr,
         })
     })
 }

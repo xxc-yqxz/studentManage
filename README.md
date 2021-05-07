@@ -344,7 +344,7 @@ URL参数：
 
 
 
-#### 根据学号查询单个学生成绩信息
+#### 根据输入信息查询单个学生成绩信息
 
 请求URL：
 
@@ -365,7 +365,7 @@ URL参数：
 
 | 参数名 | 必选 | 类型   | 说明       |
 | ------ | ---- | ------ | ---------- |
-| stuId  | 是   | string | 学生的学号 |
+| stu    | 是   | string | 学生的学号 |
 
 返回示例：
 
@@ -407,68 +407,6 @@ URL参数：
 
 
 
-
-
-
-#### 根据学科名查询单科的所有成绩
-
-请求URL：
-
-logining/getScoreByClassName/:className
-
-请求方式：
-
-GET
-
-Header:
-
-```html
-Authorization:Bearer
-ejrpoangeanfaoiOIHJKJKHjopnaonhefoqpwjfl...
-```
-
-URL参数：
-
-| 参数名    | 必选 | 类型   | 说明     |
-| --------- | ---- | ------ | -------- |
-| className | 是   | string | 学科名称 |
-
-返回示例：
-
-```html
-{
-"status":0,
-"message":"获取成绩信息成功！"。
-"data":[
-{
-"id":1,
-"stuId":"1808190146",
-"className":"高等数学",
-"score":97
-}
-{
-"id":4,
-"stuId":"1808190145",
-"className":"高等数学",
-"score":95
-}
-]
-}
-```
-
-返回参数说明：
-
-
-
-| 参数名     | 类型   | 说明                           |
-| ---------- | ------ | ------------------------------ |
-| status     | int    | 请求是否成功，0：成功；1：失败 |
-| message    | string | 请求结果的描述信息             |
-| data       | array  | 成绩的数组                     |
-| +id        | int    | 成绩id                         |
-| +stuId     | string | 学生的id                       |
-| +className | string | 学科的名字                     |
-| +score     | int    | 成绩                           |
 
 
 

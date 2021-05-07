@@ -15,6 +15,10 @@ body {
     line-height: 38px;
 }
 
+.address input{
+    width: 500px;
+}
+
 .status {
     line-height: 38px;
 }

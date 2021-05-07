@@ -1,0 +1,81 @@
+body {
+    background-color: #ebe7e7;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+}
+
+.text {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    text-shadow: 1px 1px 50px rgb(0, 238, 255);
+}
+
+.a {
+    position: relative;
+    perspective: 1600px;
+    top: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.b {
+    width: 400px;
+    height: 250px;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: a 8s infinite cubic-bezier(.7, 0, .17, 1);
+}
+
+.b div {
+    position: absolute;
+    background-size: cover;
+    opacity: .9;
+    width: 400px;
+    height: 250px;
+    transform: rotateY(calc(var(--i)*90deg)) translateZ(725px);
+}
+
+@keyframes a {
+    0% {
+        transform: translateZ(-100px) rotateY(0);
+    }
+
+    25% {
+        transform: translateZ(-100px) rotateY(-90deg);
+    }
+
+    50% {
+        transform: translateZ(-100px) rotateY(-180deg);
+    }
+
+    75% {
+        transform: translateZ(-100px) rotateY(-270deg);
+    }
+
+    100% {
+        transform: translateZ(-100px) rotateY(-360deg);
+    }
+}
+
+.c {
+    background-image: url(../../../public/bg1.jpg);
+}
+
+.d {
+    background-image: url(../../../public/bg2.jpg);
+}
+
+.e {
+    background-image: url(../../../public/bg3.jpg);
+}
+
+.f {
+    background-image: url(../../../public/bg4.jpg);
+}

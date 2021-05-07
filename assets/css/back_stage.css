@@ -20,6 +20,10 @@ body {
     vertical-align: super!important;
 }
 
+.layui-body {
+    padding-bottom: 0!important;
+}
+
 iframe {
     width: 100%;
     height: 100%;

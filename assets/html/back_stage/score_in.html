@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../lib/css/layui.css">
+    <link rel="stylesheet" href="../../css/back_stage/modifypwd.css">
+</head>
+
+<body>
+    <div class="layui-card">
+        <div class="layui-card-header">录入成绩</div>
+        <div class="layui-card-body">
+            <form class="layui-form">
+                <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">学生学号:</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="" placeholder="请输入学生学号:" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">科目名称:</label>
+                    <div class="layui-input-inline ">
+                        <select name="course" lay-verify="">
+                            <option value="">请选择一个科目：</option>
+                            <option value="">Java</option>
+                            <option value="">C++</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">成绩:</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="" placeholder="请输入成绩" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button class="layui-btn" lay-submit lay-filter="formDemo">提交</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../../lib/layui.js"></script>
+</body>
+
+</html>
