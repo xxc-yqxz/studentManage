@@ -47,7 +47,6 @@ exports.score = (req, res) => {
 exports.getdata = (req, res) => {
     var id = req.query.id;
 
-
     var userInfo = req.user;
     const sql = "select * from users where id=?"
 
@@ -77,7 +76,6 @@ exports.setdata = (req, res) => {
 
     db.query(sql, [data, req.user.userId], (err, results) => {
         if (err) return res.cc(err)
-
 
         if (results.affectedRows !== 1) return res.cc("更改用户信息失败!")
 
