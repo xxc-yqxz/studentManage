@@ -18,36 +18,40 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户账号:</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="" placeholder="请输入用户账号:" autocomplete="off" class="layui-input">
+                        <input type="text" name="userId" placeholder="请输入用户账号:" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户姓名:</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="" placeholder="请输入用户姓名:" autocomplete="off" class="layui-input">
+                        <input type="text" name="username" placeholder="请输入用户姓名:" autocomplete="off"
+                            class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">用户角色:</label>
                     <div class="layui-input-inline ">
-                        <select name="course" lay-verify="">
+                        <select name="roles" lay-verify="">
                             <option value="">请选择一个角色:</option>
-                            <option value="">管理员</option>
-                            <option value="">老师</option>
-                            <option value="">学生</option>
+                            <option value="admin">管理员</option>
+                            <option value="teacher">老师</option>
+                            <option value="student">学生</option>
                         </select>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-block">
                         <button class="layui-btn" lay-submit lay-filter="formDemo">提交</button>
-                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        <button type="reset" class="layui-btn layui-btn-primary reset">重置</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
     <script src="../../lib/layui.js"></script>
+    <script src="../../lib/jquery.js"></script>
+    <script src="../../js/baseAPI.js"></script>
+    <script src="../../js/user_add.js"></script>
 </body>
 
 </html>

@@ -1,8 +1,7 @@
 $(function () {
-    const form = layui.form;
-    const layer = layui.layer;
+    var form = layui.form
+    var layer = layui.layer
     var laypage = layui.laypage
-    var role = window.parent.$('#role').attr('data-role');
     var q = {
         pagenum: 1, // 当前页
         pagesize: 4,    // 每页数据条数
@@ -10,20 +9,21 @@ $(function () {
     var formdata;
     var flag = false;
     var data;
+    var role = window.parent.$('#role').attr('data-role');
+
     initTable(flag);
     function initTable(is_search) {
         if (!is_search) {
             $.ajax({
-                url: '/logining/get_stu_mes',
+                url: '/logining/get_score',
                 method: 'GET',
                 data: q,
                 success: function (res) {
-                    console.log(res);
                     var htmlStr
                     if (role === 'admin') {
-                        htmlStr = template('tpl-table', res.data)
+                        htmlStr = template('tpl-table', res)
                     } else {
-                        htmlStr = template('tpl-table2', res.data)
+                        htmlStr = template('tpl-table2', res)
                     }
                     $('tbody').html(htmlStr)
                     renderPage(res.total)
@@ -32,18 +32,16 @@ $(function () {
             })
         } else {
             $.ajax({
-                url: '/logining/get_stu_mes',
+                url: '/logining/get_score',
                 method: 'GET',
                 data,
                 success: function (res) {
-                    console.log(res);
-
                     layer.msg(res.message)
                     var htmlStr
                     if (role === 'admin') {
-                        htmlStr = template('tpl-table', res.data)
+                        htmlStr = template('tpl-table', res)
                     } else {
-                        htmlStr = template('tpl-table2', res.data)
+                        htmlStr = template('tpl-table2', res)
                     }
                     $('tbody').html(htmlStr)
                     renderPage(res.total)
@@ -73,6 +71,7 @@ $(function () {
             }
         })
     }
+
     $('.layui-form').on('submit', function (e) {
         e.preventDefault();
         flag = true;
@@ -89,16 +88,50 @@ $(function () {
         }
     }
 
-    $('tbody').on('click', '#btn1', function (e) {
+    $('tbody').on('click', '#modify', function (e) {
         e.preventDefault()
         var id = $(this).attr('data-id')
         layer.open({
-            type: 2,
-            title: '学生详细信息',
-            area: ['900px', '800px'],
-            content: ['/assets/html/content/stu_info.html', 'no'],
+            type: 1,
+            title: '修改成绩信息',
+            area: ['500px', '200px'],
+            content: $('#mod-tpl').html(),
+            success: function () {
+                $('#mod-form').on('submit', function (e) {
+                    e.preventDefault()
+                    $.ajax({
+                        url: '/logining/modify_score',
+                        method: 'POST',
+                        data: $(this).serialize() + '&' + 'id=' + id,
+                        success: function (res) {
+                            layer.msg(res.message)
+                            var timer = setTimeout(function () {
+                                location.href = '/assets/html/back_stage/stu_score.html'
+                            }, 500)
+                        }
+                    })
+                    layer.close()
+                })
+
+            }
         })
-        $('#get_id').attr('data-id', id)
+    })
+
+    $('tbody').on('click', '#del', function (e) {
+        e.preventDefault();
+        var id = $(this).attr('data-id')
+        layer.confirm('确认删除此条成绩?', { icon: 3, title: '提示' }, function (index) {
+            $.ajax({
+                url: '/logining/score_del/' + id,
+                method: 'GET',
+                success: function (res) {
+                    layer.msg(res.message)
+                    var timer = setTimeout(function () {
+                        location.href = '/assets/html/back_stage/stu_score.html'
+                    }, 500)
+                }
+            })
+            layer.close()
+        })
     })
 })
-

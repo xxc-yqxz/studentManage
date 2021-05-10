@@ -18,18 +18,28 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">科目名称:</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="" placeholder="请输入科目名称:" autocomplete="off" class="layui-input">
+                        <input type="text" name="subject" placeholder="请输入科目名称:" autocomplete="off" class="layui-input"
+                            lay-verify='required'>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">提交</button>
+                        <button class="layui-btn" lay-submit lay-filter='*'>新增</button>
+                        <button class="layui-btn layui-btn-danger" lay-submit lay-filter='**'>删除</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        <button type="button" class="layui-btn layui-btn-sm layui-btn-normal" lay-filter='***'
+                            id="deled">
+                            <i class="layui-icon layui-icon-delete"></i>
+                        </button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
     <script src="../../lib/layui.js"></script>
+    <script src="../../lib/jquery.js"></script>
+    <script src="../../js/baseAPI.js"></script>
+    <script src="../../js/course_in.js"></script>
 </body>
 
 </html>

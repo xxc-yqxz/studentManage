@@ -22,23 +22,31 @@
                     <tr>
                         <th>学科名</th>
                         <th>分数</th>
+                        <th>学年</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>高等数学</td>
-                        <td>98</td>
-                    </tr>
-                    <tr>
-                        <td>数据库</td>
-                        <td>15</td>
-                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
+
+    <!-- 列表数据的模板引擎 -->
+    <script type="text/html" id="tpl-table">
+        {{each data}}
+        <tr>
+            <td>{{$value.subject}}</td>
+            <td>{{$value.score}}</td>
+            <td>{{$value.date}}</td>
+        </tr>
+        {{/each}}
+    </script>
+
     <script src="../../lib/layui.js"></script>
     <script src="../../lib/jquery.js"></script>
+    <script src="../../js/baseAPI.js"></script>
+    <script src="../../lib/template-web.js"></script>
     <script src="../../js/score.js"></script>
 </body>
 

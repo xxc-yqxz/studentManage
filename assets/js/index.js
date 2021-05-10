@@ -1,23 +1,38 @@
 $(function () {
     getUserInfo()
 
+
     var layer = layui.layer
+
+    $('#btnLogout').on('click', function () {
+        layer.confirm('确定退出登录?', {
+            icon: 3, title: '提示', color: 'black'
+        }, function (index) {
+            localStorage.removeItem('token')
+
+            location.href = '/assets/html/login.html'
+            layer.close(index)
+        }, function (index, layero) {
+            $('.layui-nav-item').removeClass('layui-this')
+        })
+    })
+
+    $('.layui-nav-item').on('mouseover', function () {
+        $(this).removeClass('layui-this')
+    })
 })
 
 function getUserInfo() {
-    console.log(1);
 
     $.ajax({
         url: '/logining/stuinfo',
         method: 'GET',
         success: function (res) {
-            console.log(res);
             if (res.status !== 0) {
                 return layui.layer.msg('获取用户信息失败!')
             }
             layui.layer.msg('获取用户信息成功!')
             $(".layui-nav-tree").children().hide();
-            console.log(res.roles);
 
             if (res.roles === 'student') {
                 $('.cjcx').show();
@@ -38,6 +53,9 @@ function getUserInfo() {
                 $('.cxxscj').show();
                 $('.rlcj').show();
             }
+            $('.username').html('你好，' + res.username)
+            $('#role').attr('data-role', res.roles)
+
         }
     })
 }

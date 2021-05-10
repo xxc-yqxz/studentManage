@@ -23,20 +23,32 @@ $(async function () {
 
     form.on('select(selectfilter2)', getQu)
 
+    var id = window.parent.$('#get_id').attr('data-id')
+
+    console.log(id);
+
     $.ajax({
         url: '/logining/getdata',
         method: 'GET',
+        data: { 'id': id },
         success: function (res) {
-            var native = res.data[0].native.split('|');
-            console.log(native);
+            console.log(res);
 
-            form.val('stuInfo', { ...res.data[0], sheng: native[0], shi: native[1], qu: native[2] })
-            getShi()
-            form.val('stuInfo', { shi: native[1], qu: native[2] })
-            form.render()
-            getQu()
-            form.val('stuInfo', { qu: native[2] })
-            form.render()
+            if (res.data[0].native) {
+                var native = res.data[0].native.split('|');
+                console.log(native);
+
+                form.val('stuInfo', { ...res.data[0], sheng: native[0], shi: native[1], qu: native[2] })
+                getShi()
+                form.val('stuInfo', { shi: native[1], qu: native[2] })
+                form.render()
+                getQu()
+                form.val('stuInfo', { qu: native[2] })
+                form.render()
+            } else {
+                form.val('stuInfo', { ...res.data[0] })
+            }
+
         }
     })
 
@@ -93,22 +105,4 @@ $(async function () {
 
     }
 
-    $('#form').on('submit', function (e) {
-        e.preventDefault()
-        var data = $(this).serialize()
-
-        layer.confirm('确认提交修改信息?', { icon: 3, title: '提示' },
-            function (index) {
-                $.ajax({
-                    url: '/logining/setdata',
-                    method: 'POST',
-                    data,
-                    success: function (res) {
-                        layer.msg(res.message)
-                        form.render()
-                    }
-                })
-                layer.close(index);
-            });
-    })
 })

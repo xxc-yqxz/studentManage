@@ -17,43 +17,43 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">学号:</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="userId" required lay-verify="required" placeholder="请输入学号"
+                        <input disabled type="text" name="userId" required lay-verify="required" placeholder="请输入学号"
                             autocomplete="off" class="layui-input" disabled>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">姓名:</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="username" required lay-verify="required" placeholder="请输入姓名"
+                        <input disabled type="text" name="username" required lay-verify="required" placeholder="请输入姓名"
                             autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">出生年月:</label>
                     <div class="layui-input-inline">
-                        <input type="date" name="birthday" required lay-verify="required" placeholder="请选择出生日期"
+                        <input disabled type="date" name="birthday" required lay-verify="required" placeholder="请选择出生日期"
                             autocomplete="off" class="layui-input date">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">电话:</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="phone" required lay-verify="required" placeholder="请输入电话"
+                        <input disabled type="text" name="phone" required lay-verify="required" placeholder="请输入电话"
                             autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">性别:</label>
                     <div class="layui-input-block">
-                        <input type="radio" name="sex" value="男" title="男">
-                        <input type="radio" name="sex" value="女" title="女" checked>
+                        <input disabled type="radio" name="sex" value="男" title="男">
+                        <input disabled type="radio" name="sex" value="女" title="女" checked>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">专业:</label>
 
                     <div class="layui-input-inline ">
-                        <select name="major" lay-verify="">
+                        <select disabled name="major" lay-verify="">
                             <option value="">请选择一个专业：</option>
                             <option value="软件工程">软件工程</option>
                             <option value="物联网">物联网</option>
@@ -66,7 +66,7 @@
                 <div class="layui-form-item layui-form-text">
                     <label class="layui-form-label">班级:</label>
                     <div class="layui-input-inline">
-                        <select name="class" lay-verify="">
+                        <select disabled name="class" lay-verify="">
                             <option value="">请选择班级：</option>
                             <option value="1班">1班</option>
                             <option value="2班">2班</option>
@@ -81,7 +81,7 @@
                                 省：
                             </div>
                             <div class="layui-col-md9">
-                                <select name="sheng" id="sheng" class="layui-layui-input-inline"
+                                <select disabled name="sheng" id="sheng" class="layui-layui-input-inline"
                                     lay-filter="selectfilter1">
                                 </select>
                             </div>
@@ -91,7 +91,7 @@
                                 市：
                             </div>
                             <div class="layui-col-md9">
-                                <select name="shi" id="shi" lay-filter="selectfilter2">
+                                <select disabled name="shi" id="shi" lay-filter="selectfilter2">
                                 </select>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                                 区/县：
                             </div>
                             <div class="layui-col-md9">
-                                <select name="qu" id="qu" lay-filter="selectfilter3">
+                                <select disabled name="qu" id="qu" lay-filter="selectfilter3">
                                 </select>
                             </div>
                         </div>
@@ -109,13 +109,8 @@
                 <div class="layui-form-item address">
                     <label class="layui-form-label">家庭地址:</label>
                     <div class="layui-input-block">
-                        <input type="text" name="address" required lay-verify="required" placeholder="请输入家庭地址"
+                        <input disabled type="text" name="address" required lay-verify="required" placeholder="请输入家庭地址"
                             autocomplete="off" class="layui-input">
-                    </div>
-                </div>
-                <div class="layui-form-item">
-                    <div class="layui-input-block">
-                        <button class="layui-btn" id="subBtn" lay-submit lay-filter="formDemo">提交修改</button>
                     </div>
                 </div>
             </form>
@@ -124,7 +119,7 @@
     <script src="../../lib/layui.js"></script>
     <script src="../../lib/jquery.js"></script>
     <script src="../../js/baseAPI.js"></script>
-    <script src="../../js/status.js"></script>
+    <script src="../../js/stu_info.js"></script>
 </body>
 
 </html>

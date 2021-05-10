@@ -18,28 +18,42 @@
                 <div class="layui-form-item">
                     <label class="layui-form-label">学生学号:</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="" placeholder="请输入学生学号:" autocomplete="off" class="layui-input">
+                        <input type="text" name="stuId" placeholder="请输入学生学号:" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">科目名称:</label>
                     <div class="layui-input-inline ">
-                        <select name="course" lay-verify="">
+                        <select name="subject" id="subject">
                             <option value="">请选择一个科目：</option>
-                            <option value="">Java</option>
-                            <option value="">C++</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">学年选择:</label>
+                    <div class="layui-input-inline ">
+                        <select name="date" id="subject">
+                            <option value="">请选择成绩学年：</option>
+                            <option value="2018-1">2018-1</option>
+                            <option value="2018-2">2018-2</option>
+                            <option value="2019-1">2019-1</option>
+                            <option value="2019-2">2019-2</option>
+                            <option value="2020-1">2020-1</option>
+                            <option value="2020-2">2020-2</option>
+                            <option value="2021-1">2021-1</option>
+                            <option value="2021-2">2021-2</option>
                         </select>
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <label class="layui-form-label">成绩:</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="" placeholder="请输入成绩" autocomplete="off" class="layui-input">
+                        <input type="text" name="score" placeholder="请输入成绩" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-form-item">
                     <div class="layui-input-block">
-                        <button class="layui-btn" lay-submit lay-filter="formDemo">提交</button>
+                        <button class="layui-btn" id="subBtn" lay-submit lay-filter="formDemo">提交</button>
                         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                     </div>
                 </div>
@@ -47,6 +61,9 @@
         </div>
     </div>
     <script src="../../lib/layui.js"></script>
+    <script src="../../lib/jquery.js"></script>
+    <script src="../../js/baseAPI.js"></script>
+    <script src="../../js/score_in.js"></script>
 </body>
 
 </html>

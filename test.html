@@ -1,178 +1,38 @@
-<!DOCTYPE html>
-<html>
+<table class="layui-table">
+    <tbody>
+        <tr>
+            <td>列表 1</td>
+            <td><button class="layui-btn layui-btn-sm demolist" data-id="111">更多操作</button></td>
+        </tr>
+        <tr>
+            <td>列表 2</td>
+            <td><button class="layui-btn layui-btn-sm demolist" data-id="222">更多操作</button></td>
+        </tr>
+        <tr>
+            <td>列表 3</td>
+            <td><button class="layui-btn layui-btn-sm demolist" data-id="333">更多操作</button></td>
+        </tr>
+    </tbody>
+</table>
+<script>
+    layui.use('dropdown', function () {
+        var dropdown = layui.dropdown
+            , $ = layui.jquery;
 
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <style>
-        .div_img {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            margin: 0 auto;
-            top: 0;
-            background: url(public/bg1.jpg);
-            background-color: #000;
-            background-repeat: no-repeat;
-            background-size: cover;
-            opacity: 1;
-            animation: fateimg 20s linear infinite;
-        }
-
-        @keyframes fateimg {
-            0% {
-                background: url(public/bg1.jpg);
-                opacity: 1;
-                background-repeat: no-repeat;
-                background-size: cover;
+        dropdown.render({
+            elem: '.demolist'
+            , data: [{
+                title: 'item 1'
+                , id: 'aaa'
+            }, {
+                title: 'item 2'
+                , id: 'bbb'
+            }]
+            , click: function (data, othis) {
+                var elem = $(this.elem)
+                    , listId = elem.data('id'); //表格列表的预埋数据
+                layer.msg('得到表格列表的 id：' + listId + '，下拉菜单 id：' + data.id);
             }
-
-            3% {
-                background: url(public/bg1.jpg);
-                opacity: .7.5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            10% {
-                background: url(public/bg1.jpg);
-                opacity: .5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            13% {
-                background: url(public/bg2.jpg);
-                opacity: .5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            20% {
-                background: url(public/bg2.jpg);
-                opacity: .7.5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            23% {
-                background: url(public/bg2.jpg);
-                opacity: 1;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            30% {
-                background: url(public/bg2.jpg);
-                opacity: .7.5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            33% {
-                background: url(public/bg2.jpg);
-                opacity: .5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            40% {
-                background: url(public/bg3.jpg);
-                opacity: .5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            43% {
-                background: url(public/bg3.jpg);
-                opacity: .7.5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            50% {
-                background: url(public/bg3.jpg);
-                opacity: 1;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            53% {
-                background: url(public/bg3.jpg);
-                opacity: .7.5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-
-            60% {
-                background: url(public/bg3.jpg);
-                opacity: .5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            63% {
-                background: url(public/bg4.jpg);
-                opacity: .5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            70% {
-                background: url(public/bg4.jpg);
-                opacity: .7.5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            73% {
-                background: url(public/bg4.jpg);
-                opacity: 1;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            80% {
-                background: url(public/bg4.jpg);
-                opacity: .7.5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            83% {
-                background: url(public/bg4.jpg);
-                opacity: .5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            90% {
-                background: url(public/bg1.jpg);
-                opacity: .5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            93% {
-                background: url(public/bg1.jpg);
-                opacity: .7.5;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-
-            100% {
-                background: url(public/bg1.jpg);
-                opacity: 1;
-                background-repeat: no-repeat;
-                background-size: cover;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <div class="div_img"></div>
-</body>
-
-</html>
+        });
+    });
+</script>
