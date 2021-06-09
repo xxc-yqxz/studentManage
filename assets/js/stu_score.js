@@ -77,7 +77,6 @@ $(function () {
         flag = true;
         formdata = $(this).serialize()
         updateData()
-        console.log(data);
         initTable(flag)
     })
     function updateData() {

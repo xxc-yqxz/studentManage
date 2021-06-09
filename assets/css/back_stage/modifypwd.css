@@ -10,3 +10,7 @@ body {
 .layui-card {
     margin: 10px;
 }
+
+label{
+    cursor: pointer;
+}
